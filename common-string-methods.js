@@ -64,7 +64,7 @@ Complete the following tasks and assign the results to the specified variables. 
   - Extract the word "Bootcamp" from the string using slice and assign the result to a variable named extractedBootcamp.
 
 */
-
+/*
 //Starter Code
 let inputString = "  Welcome to the Coding Bootcamp! Learn JavaScript today.  ";
 
@@ -101,3 +101,82 @@ console.log({
   firstCharacter,
   extractedBootcamp,
 });
+/*
+/* Stringing Characters Together | Lesson 6
+  Practice: String Methods
+*/
+
+// Starting string as provided in the instructions
+let inputString = "  Welcome to the Coding Bootcamp! Learn JavaScript today.  ";
+
+// 1. Searching
+// Check if the word "JavaScript" is in the string
+let hasJavaScript = inputString.includes("JavaScript");
+
+// Find the position of the word "Coding"
+let codingPosition = inputString.indexOf("Coding");
+
+// Check if the string starts with "Welcome" (trimming first to handle the leading spaces)
+let startsWithWelcome = inputString.trim().startsWith("Welcome");
+
+// Check if the string ends with "today." (trimming first to handle the trailing spaces)
+let endsWithToday = inputString.trim().endsWith("today.");
+
+
+// 2. Transforming
+// Convert the string to all lowercase letters
+let lowercaseString = inputString.toLowerCase();
+
+// Convert the string to all uppercase letters
+let uppercaseString = inputString.toUpperCase();
+
+// Remove the extra spaces from the beginning and end
+let trimmedString = inputString.trim();
+
+// Replace "JavaScript" with "coding"
+let replacedString = inputString.replace("JavaScript", "coding");
+
+
+// 3. Breaking Apart
+// Split the string into an array of words using a space (" ") as the delimiter
+let wordsArray = trimmedString.split(" ");
+
+
+// 4. Retrieving
+// Retrieve the first character of the trimmed string
+let firstCharacter = trimmedString.charAt(0);
+
+// Extract the word "Bootcamp" from the string
+// We find where it starts and then slice 8 characters forward
+let bootcampStart = inputString.indexOf("Bootcamp");
+let extractedBootcamp = inputString.slice(bootcampStart, bootcampStart + 8);
+
+
+// Log all results to the console as requested
+console.log("--- String Method Results ---");
+console.log({
+  hasJavaScript,
+  codingPosition,
+  startsWithWelcome,
+  endsWithToday,
+  lowercaseString,
+  uppercaseString,
+  trimmedString,
+  replacedString,
+  wordsArray,
+  firstCharacter,
+  extractedBootcamp,
+});
+
+/* Advanced Challenge Section (Optional Practice)
+*/
+let customerData = "Customer: John Doe\nOrder: Apple, Banana, Grape\nTotal: $20.50";
+
+let customerName = customerData.split("\n")[0].split(": ")[1];
+let orderItems = customerData.split("\n")[1].split(": ")[1].split(", ");
+let upperTotal = customerData.split("\n")[2].toUpperCase();
+
+console.log("\n--- Advanced Challenge Results ---");
+console.log("Name:", customerName);
+console.log("Items:", orderItems);
+console.log(upperTotal);
